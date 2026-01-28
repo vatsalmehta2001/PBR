@@ -1,0 +1,62 @@
+# Chlorella vulgaris kinetic parameters for growth simulation
+# Each parameter includes: value, unit, source, note
+# Parameters marked ASSUMED lack primary-source validation
+
+species: Chlorella vulgaris
+
+growth:
+  mu_max:
+    value: 1.0
+    unit: "1/d"
+    source: "Schediwy et al. (2019), Table 2: rX,max = 0.02-0.15 g/g/h"
+    note: "Conservative mid-range for C. vulgaris; 1.0/d before discount factor"
+
+  Ks_co2:
+    value: 0.5
+    unit: "mg/L"
+    source: "Schediwy et al. (2019), Table 2: kCO2 = 0.5 mg/L"
+    note: "Half-saturation for dissolved CO2; also reported as 0.027% or 11 umol/L"
+
+  I_opt:
+    value: 80.0
+    unit: "umol/m2/s"
+    source: "Razzak et al. (2024), citing Metsoviti et al."
+    note: "Optimal light for C. vulgaris; photoinhibition onset >110 umol/m2/s"
+
+  r_maintenance:
+    value: 0.01
+    unit: "1/d"
+    source: "General microalgae literature"
+    note: "ASSUMED - not from primary Schediwy/Razzak sources"
+
+  discount_factor:
+    value: 0.5
+    unit: "dimensionless"
+    source: "Schediwy et al. (2019); lab-to-field discount 40-60%"
+    note: "Midpoint of 40-60% range; user-visible adjustable parameter"
+
+light:
+  sigma_x:
+    value: 0.2
+    unit: "m2/g"
+    source: "Schediwy et al. (2019), Table 2: sigma_X = 0.1-0.3 m2/g"
+    note: "Midpoint of range; biomass-specific light absorption coefficient"
+
+  background_turbidity:
+    value: 0.5
+    unit: "1/m"
+    source: "General open pond literature estimate"
+    note: "ASSUMED - accounts for non-biomass light extinction (water, dissolved organics)"
+
+carbon:
+  carbon_content:
+    value: 0.50
+    unit: "g_C/g_DW"
+    source: "Schediwy et al. (2019), Table 2: carbon content = 0.5 g/g"
+    note: "Yields YCO2/X = MCO2/MC * 0.5 = (44/12)*0.5 = 1.83 g_CO2/g_biomass"
+
+  co2_to_biomass_ratio:
+    value: 1.83
+    unit: "g_CO2/g_DW"
+    source: "Derived: (44/12) * 0.50 = 1.833; Schediwy Table 2 reports 1.8"
+    note: "Consistent with Razzak et al. (2024): up to 1.83 kg CO2/kg biomass"
