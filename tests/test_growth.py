@@ -226,21 +226,26 @@ class TestDepthAveragedGrowthRate:
     def test_depth_averaged_high_biomass_reduces_growth(
         self, default_growth_params, default_light_params
     ):
-        """Very high biomass concentration reduces depth-averaged growth via self-shading."""
+        """At moderate surface irradiance near I_opt, high biomass reduces growth.
+
+        When I0 is near I_opt (80 umol/m2/s), surface layers are near
+        optimal. Adding more biomass pushes all layers below optimal via
+        self-shading, reducing average growth rate. This is the classic
+        self-shading limitation (as opposed to the photoinhibition-relief
+        effect seen at I0 >> I_opt).
+        """
         mu_low = depth_averaged_growth_rate(
-            I0=500.0, co2=5.0, biomass_conc=1.0, depth=0.3,
+            I0=80.0, co2=5.0, biomass_conc=0.5, depth=0.3,
             growth_params=default_growth_params,
             light_params=default_light_params,
         )
         mu_high = depth_averaged_growth_rate(
-            I0=500.0, co2=5.0, biomass_conc=20.0, depth=0.3,
+            I0=80.0, co2=5.0, biomass_conc=10.0, depth=0.3,
             growth_params=default_growth_params,
             light_params=default_light_params,
         )
-        # High biomass causes heavy self-shading -> lower average growth
-        # (but surface photoinhibition is reduced, so it's complex)
-        # With very high biomass (20 g/L), bottom layers get no light
-        # Overall, extremely high biomass should reduce average growth
+        # At I0=I_opt, more biomass means deeper layers fall below optimal
+        # -> lower average growth rate (pure self-shading, no photoinhibition relief)
         assert mu_high < mu_low
 
 
