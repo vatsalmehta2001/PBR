@@ -1,0 +1,425 @@
+# Surat, Gujarat, India - Monthly climate profile for microalgal growth simulation
+# Each parameter includes: value, unit, source, note
+# Data compiled from Weather Atlas, WeatherSpark, and ClimatesToTravel (1981-2010 averages)
+
+city: Surat
+country: India
+latitude: 21.17
+longitude: 72.83
+
+# Cardinal temperature parameters for Chlorella vulgaris
+# Species-dependent but loaded with climate since they define
+# the temperature response in this city's context
+temperature_params:
+  T_min:
+    value: 8.0
+    unit: "C"
+    source: "Literature consensus for C. vulgaris; conservative lower bound"
+    note: "Growth effectively zero below this; some strains survive at 5C"
+  T_opt:
+    value: 28.0
+    unit: "C"
+    source: "Converti et al. (2009); Singh & Singh (2014); Bernard & Remond (2012)"
+    note: "Mid-range of 25-30C optimal; conservative for outdoor conditions"
+  T_max:
+    value: 40.0
+    unit: "C"
+    source: "Converti et al. (2009): death at 38C; DISCOVR screening to 45C"
+    note: "Conservative; some strains die at 38C, hardy strains tolerate to 42C"
+
+months:
+  january:
+    season: dry
+    temp_day:
+      value: 30
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 29.8C across sources"
+    temp_night:
+      value: 15
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 15.2C across sources"
+    par:
+      value: 430
+      unit: "umol/m2/s"
+      source: "Derived from GHI via PAR = GHI * 0.45 * 4.57 / daylight_s (WeatherSpark data)"
+      note: "5.1 kWh/m2/d GHI, 11.0h daylight; average daytime PAR"
+    photoperiod:
+      value: 11.0
+      unit: "hours"
+      source: "WeatherSpark: avg daylight hours Jan at 21N latitude"
+      note: "Winter minimum approaching"
+    rainfall:
+      value: 0
+      unit: "mm"
+      source: "Weather Atlas; ClimatesToTravel (1981-2010 avg)"
+      note: "Dry season; virtually no precipitation"
+    cloud_cover_fraction:
+      value: 0.16
+      unit: "fraction"
+      source: "WeatherSpark: 16% cloud cover January"
+      note: "Clear skies typical of dry season"
+
+  february:
+    season: dry
+    temp_day:
+      value: 32
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 31.5-32.3C across sources"
+    temp_night:
+      value: 17
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 16.7-18.0C across sources"
+    par:
+      value: 484
+      unit: "umol/m2/s"
+      source: "Derived from GHI via PAR = GHI * 0.45 * 4.57 / daylight_s (WeatherSpark data)"
+      note: "6.0 kWh/m2/d GHI, 11.5h daylight; increasing solar angle"
+    photoperiod:
+      value: 11.5
+      unit: "hours"
+      source: "WeatherSpark: avg daylight hours Feb at 21N latitude"
+      note: "Daylight increasing toward equinox"
+    rainfall:
+      value: 0
+      unit: "mm"
+      source: "Weather Atlas; ClimatesToTravel (1981-2010 avg)"
+      note: "Dry season; virtually no precipitation"
+    cloud_cover_fraction:
+      value: 0.13
+      unit: "fraction"
+      source: "WeatherSpark: 13% cloud cover February"
+      note: "Clearest month of the year"
+
+  march:
+    season: hot
+    temp_day:
+      value: 35
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 34.3-35.4C across sources"
+    temp_night:
+      value: 21
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 20.7-22.0C across sources"
+    par:
+      value: 525
+      unit: "umol/m2/s"
+      source: "Derived from GHI via PAR = GHI * 0.45 * 4.57 / daylight_s (WeatherSpark data)"
+      note: "6.8 kWh/m2/d GHI, 12.0h daylight; peak solar approaching"
+    photoperiod:
+      value: 12.0
+      unit: "hours"
+      source: "WeatherSpark: avg daylight hours Mar at 21N latitude"
+      note: "Near equinox; equal day and night"
+    rainfall:
+      value: 0
+      unit: "mm"
+      source: "Weather Atlas; ClimatesToTravel (1981-2010 avg)"
+      note: "Hot season; dry conditions persist"
+    cloud_cover_fraction:
+      value: 0.15
+      unit: "fraction"
+      source: "WeatherSpark: 15% cloud cover March"
+      note: "Mostly clear skies"
+
+  april:
+    season: hot
+    temp_day:
+      value: 37
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 35.8-36.7C; peak heat approaching"
+    temp_night:
+      value: 24
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 24.0-25.0C across sources"
+    par:
+      value: 525
+      unit: "umol/m2/s"
+      source: "Derived from GHI via PAR = GHI * 0.45 * 4.57 / daylight_s (WeatherSpark data)"
+      note: "7.2 kWh/m2/d GHI, 12.7h daylight; highest GHI month"
+    photoperiod:
+      value: 12.7
+      unit: "hours"
+      source: "WeatherSpark: avg daylight hours Apr at 21N latitude"
+      note: "Increasing toward summer solstice"
+    rainfall:
+      value: 0
+      unit: "mm"
+      source: "Weather Atlas; ClimatesToTravel (1981-2010 avg)"
+      note: "Hot season; rare isolated showers"
+    cloud_cover_fraction:
+      value: 0.18
+      unit: "fraction"
+      source: "WeatherSpark: 18% cloud cover April"
+      note: "Slight increase from pre-monsoon buildup"
+
+  may:
+    season: hot
+    temp_day:
+      value: 36
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 35.3-35.8C; hottest nights"
+    temp_night:
+      value: 27
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 26.8-27.9C; warmest nights"
+    par:
+      value: 498
+      unit: "umol/m2/s"
+      source: "Derived from GHI via PAR = GHI * 0.45 * 4.57 / daylight_s (WeatherSpark data)"
+      note: "7.1 kWh/m2/d GHI, 13.2h daylight; GHI starts to drop with pre-monsoon haze"
+    photoperiod:
+      value: 13.2
+      unit: "hours"
+      source: "WeatherSpark: avg daylight hours May at 21N latitude"
+      note: "Near summer solstice maximum"
+    rainfall:
+      value: 2
+      unit: "mm"
+      source: "Weather Atlas; ClimatesToTravel (1981-2010 avg)"
+      note: "Midpoint of 0-4mm range; rare pre-monsoon showers"
+    cloud_cover_fraction:
+      value: 0.29
+      unit: "fraction"
+      source: "WeatherSpark: 29% cloud cover May"
+      note: "Pre-monsoon cloud buildup begins"
+
+  june:
+    season: monsoon
+    temp_day:
+      value: 34
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 33.0-34.0C; monsoon onset cools slightly"
+    temp_night:
+      value: 27
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 27.0-28.3C; high humidity maintains warmth"
+    par:
+      value: 401
+      unit: "umol/m2/s"
+      source: "Derived from GHI via PAR = GHI * 0.45 * 4.57 / daylight_s (WeatherSpark data)"
+      note: "5.8 kWh/m2/d GHI, 13.4h daylight; significant monsoon cloud reduction"
+    photoperiod:
+      value: 13.4
+      unit: "hours"
+      source: "WeatherSpark: avg daylight hours Jun at 21N latitude"
+      note: "Near summer solstice; longest daylight"
+    rainfall:
+      value: 143
+      unit: "mm"
+      source: "Weather Atlas; ClimatesToTravel (1981-2010 avg)"
+      note: "Midpoint of 41-245mm range; monsoon onset highly variable"
+    cloud_cover_fraction:
+      value: 0.60
+      unit: "fraction"
+      source: "WeatherSpark: 60% cloud cover June"
+      note: "Monsoon onset; dramatic cloud increase"
+
+  july:
+    season: monsoon
+    temp_day:
+      value: 31
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 29.8-31.2C; peak monsoon cooling"
+    temp_night:
+      value: 26
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 25.9-26.5C; monsoon moderates nights"
+    par:
+      value: 348
+      unit: "umol/m2/s"
+      source: "Derived from GHI via PAR = GHI * 0.45 * 4.57 / daylight_s (WeatherSpark data)"
+      note: "5.0 kWh/m2/d GHI, 13.3h daylight; lowest PAR of the year"
+    photoperiod:
+      value: 13.3
+      unit: "hours"
+      source: "WeatherSpark: avg daylight hours Jul at 21N latitude"
+      note: "Near peak daylight; offset by heavy cloud cover"
+    rainfall:
+      value: 300
+      unit: "mm"
+      source: "Weather Atlas; ClimatesToTravel (1981-2010 avg)"
+      note: "Midpoint of 135-465mm range; peak monsoon month"
+    cloud_cover_fraction:
+      value: 0.78
+      unit: "fraction"
+      source: "WeatherSpark: 78% cloud cover July"
+      note: "Peak cloud cover; overcast most days"
+
+  august:
+    season: monsoon
+    temp_day:
+      value: 31
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 29.3-30.8C; similar to July"
+    temp_night:
+      value: 26
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 25.5-26.0C; monsoon continues"
+    par:
+      value: 376
+      unit: "umol/m2/s"
+      source: "Derived from GHI via PAR = GHI * 0.45 * 4.57 / daylight_s (WeatherSpark data)"
+      note: "5.2 kWh/m2/d GHI, 12.8h daylight; monsoon cloud cover persists"
+    photoperiod:
+      value: 12.8
+      unit: "hours"
+      source: "WeatherSpark: avg daylight hours Aug at 21N latitude"
+      note: "Post-solstice decline beginning"
+    rainfall:
+      value: 204
+      unit: "mm"
+      source: "Weather Atlas; ClimatesToTravel (1981-2010 avg)"
+      note: "Midpoint of 122-285mm range; monsoon continues"
+    cloud_cover_fraction:
+      value: 0.76
+      unit: "fraction"
+      source: "WeatherSpark: 76% cloud cover August"
+      note: "Heavy cloud cover similar to July"
+
+  september:
+    season: monsoon
+    temp_day:
+      value: 32
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 30.3-32.3C; monsoon retreat begins"
+    temp_night:
+      value: 25
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 25.2-25.4C; nights cooling"
+    par:
+      value: 418
+      unit: "umol/m2/s"
+      source: "Derived from GHI via PAR = GHI * 0.45 * 4.57 / daylight_s (WeatherSpark data)"
+      note: "5.5 kWh/m2/d GHI, 12.2h daylight; monsoon retreat improves solar"
+    photoperiod:
+      value: 12.2
+      unit: "hours"
+      source: "WeatherSpark: avg daylight hours Sep at 21N latitude"
+      note: "Near equinox; declining toward winter"
+    rainfall:
+      value: 108
+      unit: "mm"
+      source: "Weather Atlas; ClimatesToTravel (1981-2010 avg)"
+      note: "Midpoint of 65-150mm range; monsoon winding down"
+    cloud_cover_fraction:
+      value: 0.53
+      unit: "fraction"
+      source: "WeatherSpark: 53% cloud cover September"
+      note: "Monsoon retreat; clearing skies"
+
+  october:
+    season: dry
+    temp_day:
+      value: 35
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 33.6-35.1C; post-monsoon heat rebound"
+    temp_night:
+      value: 23
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 23.3-24.9C; cooling toward winter"
+    par:
+      value: 439
+      unit: "umol/m2/s"
+      source: "Derived from GHI via PAR = GHI * 0.45 * 4.57 / daylight_s (WeatherSpark data)"
+      note: "5.5 kWh/m2/d GHI, 11.6h daylight; post-monsoon clear skies"
+    photoperiod:
+      value: 11.6
+      unit: "hours"
+      source: "WeatherSpark: avg daylight hours Oct at 21N latitude"
+      note: "Declining toward winter minimum"
+    rainfall:
+      value: 27
+      unit: "mm"
+      source: "Weather Atlas; ClimatesToTravel (1981-2010 avg)"
+      note: "Midpoint of 13-40mm range; occasional late-monsoon showers"
+    cloud_cover_fraction:
+      value: 0.32
+      unit: "fraction"
+      source: "WeatherSpark: 32% cloud cover October"
+      note: "Rapid clearing after monsoon"
+
+  november:
+    season: dry
+    temp_day:
+      value: 34
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 33.2-34.1C; pleasant dry season"
+    temp_night:
+      value: 20
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 19.6-23.3C; cooling nights"
+    par:
+      value: 426
+      unit: "umol/m2/s"
+      source: "Derived from GHI via PAR = GHI * 0.45 * 4.57 / daylight_s (WeatherSpark data)"
+      note: "5.1 kWh/m2/d GHI, 11.1h daylight; lower sun angle"
+    photoperiod:
+      value: 11.1
+      unit: "hours"
+      source: "WeatherSpark: avg daylight hours Nov at 21N latitude"
+      note: "Approaching winter minimum"
+    rainfall:
+      value: 6
+      unit: "mm"
+      source: "Weather Atlas; ClimatesToTravel (1981-2010 avg)"
+      note: "Midpoint of 5-7mm range; minimal precipitation"
+    cloud_cover_fraction:
+      value: 0.22
+      unit: "fraction"
+      source: "WeatherSpark: 22% cloud cover November"
+      note: "Clear dry season skies"
+
+  december:
+    season: dry
+    temp_day:
+      value: 31
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 30.8-31.9C; coolest month"
+    temp_night:
+      value: 17
+      unit: "C"
+      source: "Weather Atlas; WeatherSpark; ClimatesToTravel (1981-2010 avg)"
+      note: "Rounded consensus of 16.5-20.6C; winter cooling"
+    par:
+      value: 400
+      unit: "umol/m2/s"
+      source: "Derived from GHI via PAR = GHI * 0.45 * 4.57 / daylight_s (WeatherSpark data)"
+      note: "4.7 kWh/m2/d GHI, 10.9h daylight; lowest GHI but short days"
+    photoperiod:
+      value: 10.9
+      unit: "hours"
+      source: "WeatherSpark: avg daylight hours Dec at 21N latitude"
+      note: "Winter solstice minimum daylight"
+    rainfall:
+      value: 1
+      unit: "mm"
+      source: "Weather Atlas; ClimatesToTravel (1981-2010 avg)"
+      note: "Midpoint of 0-1mm range; dry season"
+    cloud_cover_fraction:
+      value: 0.20
+      unit: "fraction"
+      source: "WeatherSpark: 20% cloud cover December"
+      note: "Clear winter skies"

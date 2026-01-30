@@ -77,3 +77,84 @@ class SpeciesParams:
     co2_to_biomass_ratio: float
     """Mass of CO2 captured per unit biomass produced [g_CO2/g_DW].
     Derived as (M_CO2 / M_C) * carbon_content = (44/12) * carbon_content."""
+
+
+@dataclass(frozen=True)
+class ClimateParams:
+    """Cardinal temperature parameters for the CTMI temperature response model.
+
+    Defines the minimum, optimal, and maximum temperatures for microalgal
+    growth. Frozen and hashable for cache keying.
+
+    References:
+        Rosso et al. (1993): CTMI original formulation.
+        Bernard & Remond (2012): Validation for microalgae.
+    """
+
+    T_min: float
+    """Minimum temperature for growth [C]. Growth is zero below this."""
+
+    T_opt: float
+    """Optimal temperature for maximum growth [C]. CTMI returns 1.0 here."""
+
+    T_max: float
+    """Maximum temperature for growth [C]. Growth is zero above this."""
+
+
+@dataclass(frozen=True)
+class MonthlyClimate:
+    """Climate data for a single month at a specific location.
+
+    Contains all environmental parameters needed for monthly growth
+    simulation: temperature (day/night split), light, and precipitation.
+    Frozen and hashable for cache keying.
+    """
+
+    season: str
+    """Season classification ('dry', 'hot', or 'monsoon')."""
+
+    temp_day: float
+    """Average daytime high temperature [C]."""
+
+    temp_night: float
+    """Average nighttime low temperature [C]."""
+
+    par: float
+    """Average daytime photosynthetically active radiation [umol/m2/s]."""
+
+    photoperiod: float
+    """Average daylight hours [h]."""
+
+    rainfall: float
+    """Average monthly rainfall [mm]."""
+
+    cloud_cover_fraction: float
+    """Average cloud cover fraction [0-1]."""
+
+
+@dataclass(frozen=True)
+class CityClimate:
+    """Complete city climate profile with 12 months of data.
+
+    Aggregates location metadata, cardinal temperature parameters, and
+    monthly climate data. Uses tuple for months to ensure hashability.
+    Frozen and hashable for Streamlit cache keying.
+    """
+
+    city: str
+    """City name."""
+
+    country: str
+    """Country name."""
+
+    latitude: float
+    """Latitude in decimal degrees [N positive]."""
+
+    longitude: float
+    """Longitude in decimal degrees [E positive]."""
+
+    climate_params: ClimateParams
+    """Cardinal temperature parameters for this city's target species."""
+
+    months: tuple[MonthlyClimate, ...]
+    """Twelve months of climate data (Jan-Dec). Tuple for hashability."""
