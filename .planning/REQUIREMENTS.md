@@ -11,14 +11,14 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **SIM-01**: Implement Monod growth equations with conservative field-validated parameters (6-10 g/m2/day baseline)
 - [x] **SIM-02**: Implement Beer-Lambert light attenuation calculations for depth-averaged growth rate
-- [ ] **SIM-03**: Implement temperature-dependent growth modifier including >35C inhibition (culture crash)
+- [x] **SIM-03**: Implement temperature-dependent growth modifier including >35C inhibition (culture crash)
 - [ ] **SIM-04**: Calculate CO2 capture using species-specific conversion factors with cited sources
 
 ### Climate Data
 
-- [ ] **CLIM-01**: Provide Surat monthly climate defaults (temperature, humidity, solar radiation, rainfall)
-- [ ] **CLIM-02**: Model three seasons: Dry (Oct-Feb), Hot (Mar-May), Monsoon (Jun-Sep)
-- [ ] **CLIM-03**: Apply monsoon cloud cover factor reducing PAR availability June-September
+- [x] **CLIM-01**: Provide Surat monthly climate defaults (temperature, humidity, solar radiation, rainfall)
+- [x] **CLIM-02**: Model three seasons: Dry (Oct-Feb), Hot (Mar-May), Monsoon (Jun-Sep)
+- [x] **CLIM-03**: Apply monsoon cloud cover factor reducing PAR availability June-September
 - [ ] **CLIM-04**: User can override any climate default with custom values
 
 ### Farm Parameters
@@ -95,11 +95,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | SIM-01 | Phase 1 | Complete |
 | SIM-02 | Phase 1 | Complete |
-| SIM-03 | Phase 2 | Pending |
+| SIM-03 | Phase 2 | Complete |
 | SIM-04 | Phase 3 | Pending |
-| CLIM-01 | Phase 2 | Pending |
-| CLIM-02 | Phase 2 | Pending |
-| CLIM-03 | Phase 2 | Pending |
+| CLIM-01 | Phase 2 | Complete |
+| CLIM-02 | Phase 2 | Complete |
+| CLIM-03 | Phase 2 | Complete |
 | CLIM-04 | Phase 4 | Pending |
 | FARM-01 | Phase 4 | Pending |
 | FARM-02 | Phase 4 | Pending |

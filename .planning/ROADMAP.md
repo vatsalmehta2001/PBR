@@ -13,7 +13,7 @@ This roadmap delivers a Python/Streamlit web application that simulates algae gr
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Core Model** - Monod equations, Beer-Lambert, conservative parameters
-- [ ] **Phase 2: Surat Climate Integration** - Temperature inhibition, seasonal modeling, monsoon effects
+- [x] **Phase 2: Surat Climate Integration** - Temperature inhibition, seasonal modeling, monsoon effects
 - [ ] **Phase 3: Simulation Engine & CO2 Calculation** - ODE solver, time-series, CO2 conversion
 - [ ] **Phase 4: Streamlit UI (Inputs)** - Parameter forms, user overrides, session state
 - [ ] **Phase 5: Visualization & Export** - Interactive charts, CSV/JSON export, deployment
@@ -47,12 +47,12 @@ Plans:
   3. Growth rate drops significantly (>50%) when temperature exceeds 35C (culture crash modeling)
   4. Monsoon months (Jun-Sep) show reduced productivity due to cloud cover PAR reduction
   5. Climate module integrates with Phase 1 growth equations without breaking unit tests
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
-- [ ] 02-03: TBD
+- [x] 02-01-PLAN.md -- Climate dataclasses, Surat YAML config, Pydantic-validated loader
+- [x] 02-02-PLAN.md -- CTMI temperature response function (TDD)
+- [x] 02-03-PLAN.md -- Day/night growth integration with seasonal verification tests
 
 ### Phase 3: Simulation Engine & CO2 Calculation
 **Goal**: Orchestrate growth + climate into full time-series simulation with species-specific CO2 capture calculation
@@ -126,7 +126,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Core Model | 3/3 | Complete | 2026-01-28 |
-| 2. Surat Climate Integration | 0/TBD | Not started | - |
+| 2. Surat Climate Integration | 3/3 | Complete | 2026-01-30 |
 | 3. Simulation Engine & CO2 | 0/TBD | Not started | - |
 | 4. Streamlit UI (Inputs) | 0/TBD | Not started | - |
 | 5. Visualization & Export | 0/TBD | Not started | - |
