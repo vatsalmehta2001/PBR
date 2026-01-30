@@ -281,7 +281,6 @@ class TestProductivityWarnings:
         warnings = check_productivity_warnings(12.0)
         assert len(warnings) == 1
         assert "10" in warnings[0]
-        assert "12.0" in warnings[0]
 
     def test_no_warning_below_10(self):
         """Productivity within field-realistic range produces no warnings."""

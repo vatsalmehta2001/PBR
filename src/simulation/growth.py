@@ -220,7 +220,7 @@ def check_productivity_warnings(productivity: float) -> list[str]:
 
     if productivity > 10.0:
         warnings.append(
-            f"Output exceeds typical field values ({productivity} g/m2/day > 10 g/m2/day)"
+            "Productivity exceeds typical field values (>10 g/m2/day) — verify parameters"
         )
 
     return warnings
