@@ -17,8 +17,9 @@ algal cells faster than cold stress.
 For Chlorella vulgaris (conservative literature values):
     T_min = 8 C, T_opt = 28 C, T_max = 40 C
 
-At T=35 C, the model returns ~0.44 (a 56% reduction from optimal),
-satisfying the >50% growth drop success criterion for Surat's pre-monsoon.
+At T=37 C (Surat pre-monsoon daytime high), the model returns ~0.46
+(a 54% reduction from optimal), satisfying the >50% growth drop success
+criterion. At T=35 C, phi=0.68 (32% reduction).
 
 References:
     Rosso et al. (1993): CTMI original formulation.
