@@ -16,16 +16,19 @@ temperature_params:
     unit: "C"
     source: "Literature consensus for C. vulgaris; conservative lower bound"
     note: "Growth effectively zero below this; some strains survive at 5C"
+    doi: null
   T_opt:
     value: 28.0
     unit: "C"
     source: "Converti et al. (2009); Singh & Singh (2014); Bernard & Remond (2012)"
     note: "Mid-range of 25-30C optimal; conservative for outdoor conditions"
+    doi: "10.1016/j.cep.2009.03.006"
   T_max:
     value: 40.0
     unit: "C"
     source: "Converti et al. (2009): death at 38C; DISCOVR screening to 45C"
     note: "Conservative; some strains die at 38C, hardy strains tolerate to 42C"
+    doi: "10.1016/j.cep.2009.03.006"
 
 months:
   january:
