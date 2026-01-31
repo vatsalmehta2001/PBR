@@ -1,28 +1,42 @@
 """Results display module for the AlgaeGrowth Simulator.
 
 Renders simulation results in the Streamlit main content area:
-summary metric cards, seasonal breakdown, browsable daily data table,
-and conditional warnings.
+summary metric cards, interactive charts, seasonal breakdown,
+browsable daily data table, export buttons, conditional warnings,
+and calculation methodology.
 """
 
 import pandas as pd
 import streamlit as st
 from streamlit import column_config as cc
 
+from src.models.parameters import CityClimate, SimulationConfig
 from src.models.results import SimulationResult
+from src.ui.charts import create_biomass_chart, create_co2_chart
+from src.ui.export import build_export_filename, prepare_csv_string, prepare_json_string
+from src.ui.methodology import display_methodology
 
 
-def display_results(result: SimulationResult) -> None:
+def display_results(
+    result: SimulationResult,
+    climate: CityClimate,
+    config: SimulationConfig,
+) -> None:
     """Render simulation results in the main content area.
 
-    Displays four sections:
+    Displays six sections:
     1. Summary Metrics -- four st.metric cards in a row
+    1b. Interactive Charts -- biomass and CO2 stacked vertically
     2. Seasonal Breakdown -- three columns for dry/hot/monsoon
     3. Daily Values -- a browsable DataFrame
+    3b. Data Export -- CSV and JSON download buttons
     4. Warnings -- conditional warning banners
+    5. Calculation Methodology -- collapsible expander
 
     Args:
         result: A frozen SimulationResult from the simulation engine.
+        climate: City climate data for chart season bands.
+        config: Simulation configuration for export metadata.
     """
     # ------------------------------------------------------------------
     # Section 1: Summary Metrics
@@ -39,6 +53,17 @@ def display_results(result: SimulationResult) -> None:
         st.metric("Harvests", str(result.harvest_count))
     with col4:
         st.metric("Duration", f"{result.duration_days} days")
+
+    # ------------------------------------------------------------------
+    # Section 1b: Interactive Charts
+    # ------------------------------------------------------------------
+    st.subheader("Growth Trajectory")
+
+    biomass_fig = create_biomass_chart(result, climate)
+    st.plotly_chart(biomass_fig, use_container_width=True)
+
+    co2_fig = create_co2_chart(result, climate)
+    st.plotly_chart(co2_fig, use_container_width=True)
 
     # ------------------------------------------------------------------
     # Section 2: Seasonal Breakdown
@@ -97,8 +122,39 @@ def display_results(result: SimulationResult) -> None:
     )
 
     # ------------------------------------------------------------------
+    # Section 3b: Data Export
+    # ------------------------------------------------------------------
+    csv_data = prepare_csv_string(result, config)
+    json_data = prepare_json_string(result, config)
+    csv_filename = build_export_filename(result, config, "csv")
+    json_filename = build_export_filename(result, config, "json")
+
+    exp_col1, exp_col2 = st.columns(2)
+    with exp_col1:
+        st.download_button(
+            label="Download CSV",
+            data=csv_data,
+            file_name=csv_filename,
+            mime="text/csv",
+            on_click="ignore",
+        )
+    with exp_col2:
+        st.download_button(
+            label="Download JSON",
+            data=json_data,
+            file_name=json_filename,
+            mime="application/json",
+            on_click="ignore",
+        )
+
+    # ------------------------------------------------------------------
     # Section 4: Warnings (conditional)
     # ------------------------------------------------------------------
     if result.warnings:
         for warning in result.warnings:
             st.warning(warning)
+
+    # ------------------------------------------------------------------
+    # Section 5: Calculation Methodology
+    # ------------------------------------------------------------------
+    display_methodology(result)

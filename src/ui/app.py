@@ -88,4 +88,4 @@ if inputs["run_clicked"]:
 with st.spinner("Running simulation..."):
     result = cached_simulation(config, species, climate)
 
-display_results(result)
+display_results(result, climate, config)
