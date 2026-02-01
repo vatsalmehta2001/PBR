@@ -44,7 +44,7 @@ Estimates CO2 captured by open-pond *Chlorella vulgaris* cultivation using Monod
 ## Demo
 
 <p align="center">
-  <img src="docs/Streamlit UI.png" alt="Growth Model" width="100%">
+  <img src="docs/Streamlit UI.png" alt="Streamlit UI" width="100%">
 </p>
 
 ## Quick Start
