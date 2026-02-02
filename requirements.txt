@@ -5,3 +5,4 @@ pyyaml>=6.0
 streamlit>=1.53.0
 pandas>=2.0
 plotly>=5.14
+-e .
