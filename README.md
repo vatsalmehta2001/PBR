@@ -9,7 +9,7 @@
 
 ## What It Does
 
-Estimates CO2 captured by open-pond *Chlorella vulgaris* cultivation using Monod growth kinetics, Steele photoinhibition, and CTMI temperature response — all with DOI-cited parameters. Designed to produce defensible numbers that carbon credit verification bodies (Verra, Gold Standard, India CCTS) can evaluate.
+The goal of this project is to develop a model of an open pond culture of the algae species Chlorella vulgaris that can be used to estimate carbon sequestration based on Monod's kinetic equations describing algal growth, Steele's equation describing the inhibition of photosynthesis as light intensity increases, and CTMI (Chapman Temperature Model for Inactivation) equations which describe how temperature affects algal growth. All of the model parameters were taken from peer-reviewed articles cited with DOIs to enable reproducibility of the model and verification against the carbon credit standards of Verra, Gold Standard, and India CCTS.
 
 ## Key Features
 
@@ -134,7 +134,7 @@ Where D_f = 0.5 (lab-to-field discount) and r_m = 0.01/d (maintenance respiratio
 | T_opt | 28.0 | C | Converti et al. (2009) | [10.1016/j.cep.2009.03.006](https://doi.org/10.1016/j.cep.2009.03.006) |
 | T_max | 40.0 | C | Converti et al. (2009) | [10.1016/j.cep.2009.03.006](https://doi.org/10.1016/j.cep.2009.03.006) |
 
-### Key Assumptions
+### Assumptions
 
 - Monod kinetics with single-substrate (CO2) limitation
 - Steele photoinhibition (growth declines above I_opt)
