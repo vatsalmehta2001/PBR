@@ -51,7 +51,7 @@ The goal of this project is to develop a model of an open pond culture of the al
 
 ```bash
 # Clone
-git clone https://github.com/vatsalmehta2001/AlgaeGrowth-Simulator.git
+git clone https://github.com/vmehtacode/AlgaeGrowth-Simulator.git
 cd AlgaeGrowth-Simulator
 
 # Install dependencies (Python 3.12+)
